@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GLEX 마스터노드 현황</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <table>
+        <tr valign="top">
+            <td style="width:500px">
+                <h1>GLEX 마스터 노드 현황</h1>
+                    <p>총 마스터 노드수 : <%= totalMN %> 개</p>
+                    <p>마스터노드 보유자수 : <%= realMNuser %> 명</p>
+                    
+                <h1>GLEX 거래별 수수료 테이블(ETH)</h1>
+                    <p>GLEX 전송(SG) : <%= feeSG %></p>
+                    <p>이더  전송(SE) : <%= feeSE %></p>
+                    <p>마스터노드 신청(MA) : <%= feeMA %></p>
+                    <p>마스터노드 해지(MW) : <%= feeMW %></p>
+                    <p>보상출금(RW) : <%= feeRW %></p>
+            </td>
+            <td style="width:500px">
+                <h1>오너 주소</h1>
+                    <p><%= owner %></p>
+                <h1>계약 주소</h1>
+                    <p><%= contract %></p>
+                <table>
+                    <tr>
+                        <td>
+                            <h1>DB 연결상태</h1>
+                        </td>
+                        <td>
+                            <% if(dbStatus) { %>
+                                <div style="width:100px; height:100px; border-radius:50%; background-color:red;"></div>
+                            <% } else { %>
+                                <div style="width:100px; height:100px; border-radius:50%; background-color:green;"></div>
+                            <% } %>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1>인푸라(infura) 연결상태</h1>
+                        </td>
+                        <td>
+                            <% if(!infuraStatus) { %>
+                                <div style="width:100px; height:100px; border-radius:50%; background-color:red;"></div>
+                            <% } else { %>
+                                <div style="width:100px; height:100px; border-radius:50%; background-color:green;"></div>
+                            <% } %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1>GETH 연결상태</h1>
+                        </td>
+                        <td>
+                            <% if(!gethStatus) { %>
+                                <div style="width:100px; height:100px; border-radius:50%; background-color:red;"></div>
+                            <% } else { %>
+                                <div style="width:100px; height:100px; border-radius:50%; background-color:green;"></div>
+                            <% } %>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+  </body>
+</html>
